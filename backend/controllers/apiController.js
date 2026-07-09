@@ -103,6 +103,7 @@ module.exports = {
   },
 
   bookingPage: async (req, res) => {
+    try {
     const {
       idItem,
       duration,
@@ -116,6 +117,9 @@ module.exports = {
       accountHolder,
       bankFrom,
     } = req.body;
+
+    console.log("RECEIVED BODY:", req.body);
+    console.log("RECEIVED FILE:", req.file);
 
     if (!req.file) {
       return res.status(404).json({ message: "Image not found" });
@@ -183,5 +187,9 @@ module.exports = {
     const booking = await Booking.create(newBooking);
 
     res.status(201).json({ message: "Success Booking", booking });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Internal server error", error: error.message });
+    }
   }
 }

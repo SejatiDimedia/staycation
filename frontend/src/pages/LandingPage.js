@@ -6,6 +6,8 @@ import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
 import Categories from "parts/Categories";
 import Testimony from "parts/Testimony";
+import Advantages from "parts/Advantages";
+import Newsletter from "parts/Newsletter";
 import Footer from "parts/Footer";
 
 import { fetchPage } from "store/actions/page";
@@ -32,12 +34,14 @@ class LandingPage extends Component {
       <>
         <Header {...this.props}></Header>
         <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
+        <Advantages />
         <MostPicked
           refMostPicked={this.refMostPicked}
           data={page.landingPage.mostPicked}
         />
         <Categories data={page.landingPage.category} />
         <Testimony data={page.landingPage.testimonial} />
+        <Newsletter />
         <Footer />
       </>
     );

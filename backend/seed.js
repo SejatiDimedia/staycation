@@ -1,8 +1,9 @@
 var seeder = require('mongoose-seed');
 var mongoose = require('mongoose');
+require('dotenv').config();
 
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb+srv://codeathome:bwamern@cluster0-40j6e.mongodb.net/db_staycation?retryWrites=true&w=majority', {
+seeder.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: true,
@@ -41,7 +42,7 @@ var data = [
     'documents': [
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc901111'),
-        name: 'Houses with beauty backyard',
+        name: 'Villas with Private Pool',
         itemId: [
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902222') },
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902223') },
@@ -51,7 +52,7 @@ var data = [
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc901112'),
-        name: 'Hotels with large living room',
+        name: 'Cozy Glamping Sites',
         itemId: [
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902226') },
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902227') },
@@ -61,7 +62,7 @@ var data = [
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc901113'),
-        name: 'Apartment with kitchen',
+        name: 'Apartments with City View',
         itemId: [
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902230') },
           { _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902231') },
@@ -81,13 +82,13 @@ var data = [
       {
         // done
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
-        title: 'Tabby Town',
-        price: 12,
+        title: 'Villa Bidadari',
+        price: 250,
         sumBooking: 2,
         country: 'Indonesia',
-        city: 'Lampung',
+        city: 'Bali',
         isPopular: false,
-        description: 'Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.',
+        description: 'A beautiful luxury villa located in the heart of Bali. Perfect for family vacations with a stunning private pool, lush tropical garden, and direct access to the beach. Experience tranquility and luxury like never before.',
         unit: 'night',
         imageId: [
           // done
@@ -126,13 +127,13 @@ var data = [
       {
         // done
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
-        title: 'Seattle Rain',
-        price: 20,
+        title: 'Mountain View Resort',
+        price: 150,
         sumBooking: 4,
         country: 'Indonesia',
         city: 'Bandung',
         isPopular: false,
-        description: 'Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.',
+        description: 'Experience the cold breeze and majestic views of the mountains. This glamping site offers a unique staycation experience where you can reconnect with nature without sacrificing comfort. Includes BBQ facilities and a campfire pit.',
         unit: 'night',
         imageId: [
           // done
@@ -387,28 +388,28 @@ var data = [
       // done
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb01'),
-        name: 'Green Lake',
+        name: 'Tirta Empul Temple',
         type: 'Nature',
         imageUrl: 'images/activity-1.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb02'),
-        name: 'Dog Clubs',
-        type: 'Pool',
+        name: 'Monkey Forest',
+        type: 'Nature',
         imageUrl: 'images/activity-2.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb03'),
-        name: 'Labour and Wait',
+        name: 'Ubud Market',
         type: 'Shopping',
         imageUrl: 'images/activity-3.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb04'),
-        name: 'Labour and Wait',
+        name: 'Seminyak Square',
         type: 'Shopping',
         imageUrl: 'images/activity-4.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902222'),
@@ -416,28 +417,28 @@ var data = [
       // done 2
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb05'),
-        name: 'Green Lake',
+        name: 'Kawah Putih',
         type: 'Nature',
         imageUrl: 'images/activity-3.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb06'),
-        name: 'Dog Clubs',
-        type: 'Pool',
+        name: 'Tea Plantation',
+        type: 'Nature',
         imageUrl: 'images/activity-2.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb07'),
-        name: 'Labour and Wait',
+        name: 'Floating Market',
         type: 'Shopping',
         imageUrl: 'images/activity-1.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),
       },
       {
         _id: mongoose.Types.ObjectId('5e96cbe292b97300fc90bb08'),
-        name: 'Labour and Wait',
+        name: 'Farmhouse Lembang',
         type: 'Shopping',
         imageUrl: 'images/activity-4.png',
         itemId: mongoose.Types.ObjectId('5e96cbe292b97300fc902223'),

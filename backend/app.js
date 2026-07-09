@@ -8,6 +8,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 // import mongoose
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -35,6 +36,7 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }));
 app.use(flash());
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

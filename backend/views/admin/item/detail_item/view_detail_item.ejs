@@ -84,6 +84,7 @@
   $(document).ready(function () {
     $('#dataTableActivity').DataTable();
   })
+  CKEDITOR.config.versionCheck = false;
   CKEDITOR.replace('about');
   $('#dataTableActivity').on('click', '.button-update', function () {
     let id = $(this).data('id');
